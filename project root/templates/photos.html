@@ -1,0 +1,24 @@
+
+
+
+{% extends 'home.html' %}
+
+{% block content %}
+<h2>Images</h2>
+<div class="image-gallery">
+  {% if images %}
+  {% for image in images %}
+  <div class="image-item">
+    <a href="#lightbox-{{ loop.index }}">
+      <img src="{{ url_for('static', filename='images/' + image[0]) }}" alt="Image for ID {{ id }}">
+    </a>
+  </div>
+  <div id="lightbox-{{ loop.index }}" class="lightbox">
+    <img src="{{ url_for('static', filename='images/' + image[0]) }}" alt="Image for ID {{ id }}">
+  </div>
+  {% endfor %}
+  {% else %}
+  <p>No image found</p>
+  {% endif %}
+</div>
+{% endblock %}

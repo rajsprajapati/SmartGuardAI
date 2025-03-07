@@ -1,0 +1,8 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<h2>Live Video Feed</h2>
+<div class="livevideo">
+    <img src="{{ url_for('video_feed') }}" width="70%">
+</div>
+{% endblock %}

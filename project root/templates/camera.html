@@ -1,0 +1,52 @@
+
+
+
+{% extends 'home.html' %}
+
+{% block content %}
+<h2>Connect Camera</h2>
+<p>Select the camera source and click the button to connect.</p>
+
+<!-- Form for camera connection -->
+<form id="camera-form" action="/camera" method="post">
+    <label for="camera-source">Choose Camera Source:</label>
+    <select id="camera-source" name="camera_source" onchange="toggleUrlInput()">
+        <option value="0">System Camera</option>
+        <option value="1">External Camera</option>
+        <option value="url">Camera URL</option>
+    </select>
+
+    <!-- Camera URL input, hidden by default -->
+    <div id="url-input" style="display: none;">
+        <label for="camera-url">Enter Camera URL:</label>
+        <input type="text" id="camera-url" name="camera_url" placeholder="http://example.com/stream">
+    </div>
+
+    <button type="submit">Connect</button>
+
+    <!-- <button type="submit" style="background-color: red; color: white;">Stop Camera</button> -->
+
+</form>
+
+<!-- Form for stopping the camera -->
+<form id="stop-form" action="/stop_camera" method="post" style="margin-top: 20px;">
+    <button type="submit" style="background-color: red; color: white;">Stop Camera</button>
+</form>
+
+<script>
+    // Function to toggle URL input visibility based on camera source selection
+    function toggleUrlInput() {
+        var cameraSource = document.getElementById('camera-source').value;
+        var urlInput = document.getElementById('url-input');
+        if (cameraSource === 'url') {
+            urlInput.style.display = 'block';
+        } else {
+            urlInput.style.display = 'none';
+        }
+    }
+
+    // Call toggleUrlInput on page load in case the form is pre-filled
+    window.onload = toggleUrlInput;
+</script>
+
+{% endblock %}

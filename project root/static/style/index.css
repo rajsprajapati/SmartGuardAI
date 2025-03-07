@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    height: auto;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.container-item {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 690px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.camera_conn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.custom-file-upload {
+    margin: 20px 0;
+    width: 45rem;
+    display: block;
+    padding-top: 107px;
+    padding-bottom: 127px;
+    color: #d3d3d3;
+    cursor: pointer;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+
+#file-upload {
+    display: none;
+}
+
+#cctv-url {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* //////////////////////////////////////////// */
+.loading-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #f3f3f3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.loading-bar::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #007bff;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    from {
+        left: -100%;
+        width: 100%;
+    }
+    to {
+        left: 100%;
+        width: 10%;
+    }
+}

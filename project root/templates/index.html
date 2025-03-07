@@ -1,0 +1,59 @@
+
+{% include 'nav.html' %}
+<div class="container">
+    <div class="container-item">
+        <h1>Revolutionize Security with SmartGuard AI</h1>
+        <h2>Enhance your surveillance systems with privacy-focused, AI-powered object detection and behavior analysis.</h2>
+        <div class="camera_conn">
+            {% if filename %}
+            <div class="upload-section" id="video-section">
+                <h3>Processed Video</h3>
+                <video width="640" height="480" controls>
+                    <source src="{{ url_for('static', filename='processed/' + filename) }}" type="video/mp4">
+                </video>
+            </div>
+            {% else %}
+            <div class="upload-section" id="upload-section">
+                <form action="/" method="post" enctype="multipart/form-data" onsubmit="showLoadingBar()">
+                    <label for="file-upload" class="custom-file-upload" id="upload-label">
+                        <i class="fa-solid fa-arrow-up-from-bracket fa-5x" style="color: #d3d3d3;"></i><br>
+                        Drag and drop a video file or click to upload
+                    </label>
+                    <input id="file-upload" type="file" name="file" onchange="showFileName(event)" />
+                    <input class="btn" type="submit" value="Upload">
+                </form>
+                <div id="loading-bar" class="loading-bar" style="display: none;"></div>
+                <div id="file-name" style="display: none;"></div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+
+<script>
+    function showLoadingBar() {
+        document.getElementById('upload-label').style.display = 'none';
+        document.getElementById('loading-bar').style.display = 'block';
+    }
+
+    function showFileName(event) {
+        var file = event.target.files[0];
+        if (file) {
+            var fileNameDiv = document.getElementById('file-name');
+            fileNameDiv.textContent = 'Selected file: ' + file.name;
+            fileNameDiv.style.display = 'block';
+            document.getElementById('upload-label').style.display = 'none';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var loadingBar = document.getElementById('loading-bar');
+        loadingBar.style.display = 'block';
+    });
+
+    window.addEventListener('load', function() {
+        var loadingBar = document.getElementById('loading-bar');
+        loadingBar.style.display = 'none';
+    });
+</script>

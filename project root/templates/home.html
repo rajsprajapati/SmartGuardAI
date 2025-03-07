@@ -1,0 +1,34 @@
+{% include 'nav.html' %}
+<div class="dashboard">
+    <aside >
+        <div class="item">
+            <a href="/home">
+                <i class="fa-solid fa-house"></i> Dashboard
+            </a>
+        </div>
+        <div class="item">
+            <a href="#visualzation">
+                <i class="fa-solid fa-users"></i>Detections
+            </a>
+        </div>
+        <div class="item">
+            <a href="/camera">
+                <i class="fa-solid fa-camera"></i>Camera
+            </a>
+        </div>
+        <div class="item">
+            <a href="/livevideo">
+                <i class="fa-regular fa-file-video"></i>Live video
+            </a>
+        </div>
+        <div class="item">
+            <a href="/images">
+                <i class="fa-regular fa-image"></i>images
+            </a>
+        </div>
+    </aside>
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+</div>
+{% include 'footer.html' %}

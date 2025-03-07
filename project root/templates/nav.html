@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartGuard AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/camera.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/contact.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/photos.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <div id="logo"><a href="/"><i class="fa-solid fa-shield"></i> SmartGuard AI </a></div>
+        <nav>
+            <ul>
+                {% if session.loggedin %}
+                <li class="user-info">
+                    <i class="fa-solid fa-user"></i> 
+                    <a href="#">{{ session.username }}</a>
+                </li>
+                <li class="login">
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </li>
+                {% else %}
+                <li><a href="/home">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li class="login"><a href="/login">Login</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    

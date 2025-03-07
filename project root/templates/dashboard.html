@@ -1,0 +1,34 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+
+<div class="numdata">
+    <div class="card">
+        <h2>Total Detections</h2>
+        <div class="amount">
+            <h2>{{ total_detections }}</h2>
+            <p>In the last Month</p>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Recent Detections</h2>
+        <div class="amount">
+            <h2>{{ recent_detections }}</h2>
+            <p>In the last Hour</p>
+        </div>
+    </div>
+    <div class="card">
+        <h2>Connected Cameras</h2>
+        <div class="amount">
+            <h2>1</h2>
+            <p>Out of 2 cameras</p>
+        </div>
+    </div>
+</div>
+<div id="visualzation">
+    <h2>Detections</h2>
+    <iframe src="http://localhost:3000/d-solo/be0r3d9kk9wcgf/detected-data?orgId=1&theme=light&panelId=1" width="450" height="200" frameborder="0"></iframe>
+    <iframe src="http://localhost:3000/d-solo/be0r3d9kk9wcgf/detected-data?orgId=1&theme=light&panelId=2" width="450" height="200" frameborder="0"></iframe>
+    <iframe src="http://localhost:3000/d-solo/be0r3d9kk9wcgf/detected-data?orgId=1&theme=light&panelId=3" width="450" height="200" frameborder="0"></iframe>
+{% endblock %}

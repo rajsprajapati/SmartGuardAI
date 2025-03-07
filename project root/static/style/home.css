@@ -1,0 +1,88 @@
+.dashboard{
+    display: flex;
+}
+
+aside{
+    width: 300px;
+    min-height: 95vh;
+    max-height: auto;
+    background: white;
+    padding: 10px;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+
+}
+ 
+.numdata{
+    display: flex;
+    gap: 15px;
+
+}
+
+.card{
+    background: white;
+    padding: 20px;
+    width: 280px;
+}
+
+.card > h2{
+    margin-top: 0;
+    text-align: left;
+    color: #555353;
+}
+
+.amount >h2{
+    margin: 40px;
+    font-size: 2.5rem;
+}
+
+.amount > p{
+    margin: 0;
+    text-align: left;
+    font-size: smaller;
+}
+
+ .item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.item:hover {
+    background-color: #f0f0f0;
+}
+
+.item i {
+    margin-right: 10px;
+}
+
+#visualzation{
+    margin: 20px 0;
+    padding: 20px 0;
+}
+
+#visualzation > h2{
+    padding: 10px;
+}
+
+#visualzation > iframe{
+    width: 49%;
+    height: 300px;
+}
+
+.livevideo{
+    text-align: center;
+}
